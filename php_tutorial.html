@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial de PHP</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Tutorial de PHP</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#que-es-php">¿Qué es PHP?</a>
+        <a href="#programas-requeridos">Programas Requeridos</a>
+        <a href="#servidor-web">Servidor Web</a>
+        <a href="#mysql-vs-sql">MySQL vs SQL</a>
+        <a href="#php-en-web">PHP en una Página Web</a>
+        <a href="#variables">Variables</a>
+        <a href="#estructura-if">Estructura If</a>
+        <a href="#repetidores">Repetidores</a>
+        <a href="#formularios">Formularios</a>
+    </nav>
+    <main>
+        <!-- 1. ¿Qué es PHP y para qué se utiliza? -->
+        <section id="que-es-php">
+            <h2>¿Qué es PHP y para qué se utiliza?</h2>
+            <p>PHP es un lenguaje de programación del lado del servidor diseñado para el desarrollo web, pero también se puede usar como un lenguaje de propósito general.</p>
+            <pre><code>
+&lt;?php
+echo "¡Hola, mundo!";
+?&gt;
+            </code></pre>
+        </section>
+
+        <!-- 2. Programas Requeridos -->
+        <section id="programas-requeridos">
+            <h2>¿Qué programas requiero para poder utilizar PHP?</h2>
+            <p>Para trabajar con PHP necesitas:</p>
+            <ul>
+                <li>Un servidor web como <strong>Apache</strong>.</li>
+                <li>PHP instalado en tu máquina.</li>
+                <li>Un editor de texto como <strong>Visual Studio Code</strong>.</li>
+            </ul>
+        </section>
+
+        <!-- 3. ¿Qué es un servidor web? -->
+        <section id="servidor-web">
+            <h2>¿Qué es un servidor web?</h2>
+            <p>Un servidor web es un programa que procesa solicitudes HTTP y sirve páginas web a los usuarios.</p>
+        </section>
+
+        <!-- 4. MySQL y SQL -->
+        <section id="mysql-vs-sql">
+            <h2>¿Qué es MySQL y qué diferencia hay entre SQL y MySQL?</h2>
+            <p>SQL es un lenguaje de consulta estructurado para interactuar con bases de datos, mientras que MySQL es un sistema de gestión de bases de datos que utiliza SQL.</p>
+        </section>
+
+        <!-- 5. PHP en una página web -->
+        <section id="php-en-web">
+            <h2>¿Cómo se usa PHP directamente en una página web?</h2>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+echo "¡Esto es PHP embebido en HTML!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </section>
+
+        <!-- 6. Variables -->
+        <section id="variables">
+            <h2>¿Qué son las variables y para qué sirven?</h2>
+            <p>En PHP, las variables se definen con un signo de dólar (<code>$</code>) seguido del nombre de la variable.</p>
+            <pre><code>
+&lt;?php
+$nombre = "Juan";
+echo "Hola, " . $nombre;
+?&gt;
+            </code></pre>
+        </section>
+
+        <!-- 7. Variable String -->
+        <section id="variable-string">
+            <h2>¿Qué es la variable string y qué función tiene?</h2>
+            <p>Una variable string almacena cadenas de texto.</p>
+            <pre><code>
+&lt;?php
+$mensaje = "Este es un string.";
+echo $mensaje;
+?&gt;
+            </code></pre>
+        </section>
+
+        <!-- 8. Estructura If -->
+        <section id="estructura-if">
+            <h2>¿Cómo se usa la estructura If en PHP y para qué sirve?</h2>
+            <pre><code>
+&lt;?php
+$edad = 18;
+if ($edad >= 18) {
+    echo "Eres mayor de edad.";
+} else {
+    echo "Eres menor de edad.";
+}
+?&gt;
+            </code></pre>
+        </section>
+
+        <!-- 9. Repetidores -->
+        <section id="repetidores">
+            <h2>Repetidores en PHP</h2>
+            <p>Los repetidores son estructuras para ejecutar código varias veces. Ejemplo: <code>for</code>, <code>while</code>, <code>foreach</code>.</p>
+            <pre><code>
+&lt;?php
+for ($i = 1; $i <= 5; $i++) {
+    echo "Número: $i&lt;br&gt;";
+}
+?&gt;
+            </code></pre>
+        </section>
+
+        <section id="formularios">
+            <h2>¿Cómo crear un formulario y que la información se guarde en un bloc de notas?</h2>
+            <form method="POST" action="guardar_bloc.php">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo"><br>
+                <button type="submit">Guardar</button>
+            </form>
+            <pre><code>&lt;?php
+$nombre = $_POST['nombre'];
+$correo = $_POST['correo'];
+
+// Escribir en un archivo llamado "datos.txt"
+$file = fopen("datos.txt", "a");
+fwrite($file, "Nombre: $nombre, Correo: $correo\n");
+fclose($file);
+
+echo "Datos guardados correctamente.";
+?&gt;</code></pre>
+        </section>
+
+        <section id="crear-base-datos">
+            <h2>¿Cómo crear una base de datos en MySQL?</h2>
+            <pre><code>&lt;?php
+$conexion = new mysqli("localhost", "usuario", "contraseña");
+
+// Crear base de datos
+$sql = "CREATE DATABASE mi_base_de_datos";
+if ($conexion->query($sql) === TRUE) {
+    echo "Base de datos creada con éxito.";
+} else {
+    echo "Error: " . $conexion->error;
+}
+$conexion->close();
+?&gt;</code></pre>
+        </section>
+
+        <section id="crear-tabla">
+            <h2>¿Cómo crear una tabla en MySQL?</h2>
+            <pre><code>&lt;?php
+$conexion = new mysqli("localhost", "usuario", "contraseña", "mi_base_de_datos");
+
+// Crear tabla
+$sql = "CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    correo VARCHAR(100)
+)";
+if ($conexion->query($sql) === TRUE) {
+    echo "Tabla creada con éxito.";
+} else {
+    echo "Error: " . $conexion->error;
+}
+$conexion->close();
+?&gt;</code></pre>
+        </section>
+
+        <section id="crear-registro">
+            <h2>¿Cómo crear un registro en MySQL?</h2>
+            <form method="POST" action="crear_registro.php">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo"><br>
+                <button type="submit">Guardar</button>
+            </form>
+            <pre><code>&lt;?php
+$conexion = new mysqli("localhost", "usuario", "contraseña", "mi_base_de_datos");
+
+$nombre = $_POST['nombre'];
+$correo = $_POST['correo'];
+
+// Insertar datos
+$sql = "INSERT INTO usuarios (nombre, correo) VALUES ('$nombre', '$correo')";
+if ($conexion->query($sql) === TRUE) {
+    echo "Registro creado con éxito.";
+} else {
+    echo "Error: " . $conexion->error;
+}
+$conexion->close();
+?&gt;</code></pre>
+        </section>
+
+        <section id="guardar-en-base">
+            <h2>¿Cómo crear un formulario y que la información se almacene en una base de datos?</h2>
+            <form method="POST" action="guardar_en_base.php">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo"><br>
+                <button type="submit">Guardar</button>
+            </form>
+            <pre><code>&lt;?php
+$conexion = new mysqli("localhost", "usuario", "contraseña", "mi_base_de_datos");
+
+$nombre = $_POST['nombre'];
+$correo = $_POST['correo'];
+
+$sql = $conexion->prepare("INSERT INTO usuarios (nombre, correo) VALUES (?, ?)");
+$sql->bind_param("ss", $nombre, $correo);
+if ($sql->execute()) {
+    echo "Datos guardados en la base de datos.";
+} else {
+    echo "Error: " . $sql->error;
+}
+$conexion->close();
+?&gt;</code></pre>
+        </section>
+
+        <section id="consultar-informacion">
+            <h2>¿Cómo crear un formulario que consulte información guardada en una base de datos?</h2>
+            <form method="POST" action="consultar.php">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo"><br>
+                <button type="submit">Consultar</button>
+            </form>
+            <pre><code>&lt;?php
+$conexion = new mysqli("localhost", "usuario", "contraseña", "mi_base_de_datos");
+
+$correo = $_POST['correo'];
+
+$sql = "SELECT * FROM usuarios WHERE correo='$correo'";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "Nombre: " . $row['nombre'] . ", Correo: " . $row['correo'];
+    }
+} else {
+    echo "No se encontraron resultados.";
+}
+$conexion->close();
+?&gt;</code></pre>
+        </section>
+    </main>
+   
+</body>
+</html>

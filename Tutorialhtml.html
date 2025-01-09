@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial de HTML</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Tutorial de HTML</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#encabezados">Encabezados</a>
+        <a href="#parrafos">Párrafos</a>
+        <a href="#listas">Listas</a>
+        <a href="#graficas">Gráficas</a>
+        <a href="#enlaces">Enlaces</a>
+        <a href="#formularios">Formularios</a>
+    </nav>
+    <main>
+        <section id="encabezados">
+            <h2>Encabezados</h2>
+            <p>HTML utiliza seis niveles de encabezados, del <code>&lt;h1&gt;</code> al <code>&lt;h6&gt;. Los encabezados más importantes tienen números más bajos.</p>
+            <pre><code>
+&lt;h1&gt;Encabezado 1&lt;/h1&gt;
+&lt;h2&gt;Encabezado 2&lt;/h2&gt;
+&lt;h3&gt;Encabezado 3&lt;/h3&gt;
+&lt;h4&gt;Encabezado 4&lt;/h4&gt;
+&lt;h5&gt;Encabezado 5&lt;/h5&gt;
+&lt;h6&gt;Encabezado 6&lt;/h6&gt;
+            </code></pre>
+            <div class="example">
+                <h1>Encabezado 1</h1>
+                <h2>Encabezado 2</h2>
+                <h3>Encabezado 3</h3>
+                <h4>Encabezado 4</h4>
+                <h5>Encabezado 5</h5>
+                <h6>Encabezado 6</h6>
+            </div>
+        </section>
+
+        <section id="parrafos">
+            <h2>Párrafos</h2>
+            <p>Los párrafos se definen con la etiqueta <code>&lt;p&gt;</code>.</p>
+            <pre><code>
+&lt;p&gt;Este es un párrafo de ejemplo.&lt;/p&gt;
+            </code></pre>
+            <div class="example">
+                <p>Este es un párrafo de ejemplo.</p>
+            </div>
+        </section>
+
+        <section id="listas">
+            <h2>Listas</h2>
+            <h3>Listas Numeradas</h3>
+            <pre><code>
+&lt;ol&gt;
+    &lt;li&gt;Elemento 1&lt;/li&gt;
+    &lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ol&gt;
+            </code></pre>
+            <div class="example">
+                <ol>
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                </ol>
+            </div>
+
+            <h3>Listas Sin Numerar</h3>
+            <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;Elemento 1&lt;/li&gt;
+    &lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ul&gt;
+            </code></pre>
+            <div class="example">
+                <ul>
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                </ul>
+            </div>
+
+            <h3>Glosario</h3>
+            <pre><code>
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Lenguaje de marcado utilizado para estructurar páginas web.&lt;/dd&gt;
+&lt;/dl&gt;
+            </code></pre>
+            <div class="example">
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>Lenguaje de marcado utilizado para estructurar páginas web.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="graficas">
+            <h2>Gráficas</h2>
+            <p>Las imágenes en HTML se manejan con la etiqueta <code>&lt;img&gt;</code>. Ejemplo:</p>
+            <pre><code>
+&lt;img src="imagenes/ejemplo.png" alt="Ejemplo de imagen" style="width: 300px;"&gt;
+            </code></pre>
+            <div class="example">
+                <img src="imagenes/pe3.jpg" alt="Ejemplo de imagen" style="width: 300px;">
+            </div>
+        </section>
+
+        <section id="enlaces">
+            <h2>Enlaces</h2>
+            <h3>Enlace a Otro Sitio Web</h3>
+            <pre><code>
+&lt;a href="https://www.google.com" target="_blank"&gt;Ir a Google&lt;/a&gt;
+            </code></pre>
+            <div class="example">
+                <a href="https://www.google.com" target="_blank">Ir a Google</a>
+            </div>
+        </section>
+
+        <section id="formularios">
+            <h2>Creación de un Formulario</h2>
+            
+            <h3>Cajas de Texto</h3>
+            <p>Las cajas de texto permiten al usuario ingresar datos. Se crean con la etiqueta <code>&lt;input type="text"&gt;</code>.</p>
+            <pre><code>
+        &lt;form&gt;
+            &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+            &lt;input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre"&gt;
+        &lt;/form&gt;
+            </code></pre>
+            <div class="example">
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+                </form>
+            </div>
+        
+            <h3>Cajas de Verificación</h3>
+            <p>Las cajas de verificación permiten seleccionar una o más opciones. Se crean con la etiqueta <code>&lt;input type="checkbox"&gt;</code>.</p>
+            <pre><code>
+        &lt;form&gt;
+            &lt;p&gt;Elige tus lenguajes favoritos:&lt;/p&gt;
+            &lt;input type="checkbox" id="html" name="lenguaje" value="HTML"&gt;
+            &lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;
+            &lt;input type="checkbox" id="css" name="lenguaje" value="CSS"&gt;
+            &lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;
+            &lt;input type="checkbox" id="javascript" name="lenguaje" value="JavaScript"&gt;
+            &lt;label for="javascript"&gt;JavaScript&lt;/label&gt;
+        &lt;/form&gt;
+            </code></pre>
+            <div class="example">
+                <form>
+                    <p>Elige tus lenguajes favoritos:</p>
+                    <input type="checkbox" id="html" name="lenguaje" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="checkbox" id="css" name="lenguaje" value="CSS">
+                    <label for="css">CSS</label><br>
+                    <input type="checkbox" id="javascript" name="lenguaje" value="JavaScript">
+                    <label for="javascript">JavaScript</label>
+                </form>
+            </div>
+        
+            <h3>Textarea</h3>
+            <p>El <code>&lt;textarea&gt;</code> se utiliza para ingresar texto en varias líneas.</p>
+            <pre><code>
+        &lt;form&gt;
+            &lt;label for="comentarios"&gt;Comentarios:&lt;/label&gt;&lt;br&gt;
+            &lt;textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."&gt;&lt;/textarea&gt;
+        &lt;/form&gt;
+            </code></pre>
+            <div class="example">
+                <form>
+                    <label for="comentarios">Comentarios:</label><br>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+   
+</body>
+</html>
